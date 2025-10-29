@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(tarjeta-presentacion-cpp LANGUAGES CXX)
+project(clase2 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -12,13 +12,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core LinguistTools)
 
-set(TS_FILES tarjeta-presentacion-cpp_en_US.ts)
+set(TS_FILES clase2_en_US.ts)
 
-add_executable(tarjeta-presentacion-cpp
+add_executable(clase2
   main.cpp
   ${TS_FILES}
 )
-target_link_libraries(tarjeta-presentacion-cpp Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(clase2 Qt${QT_VERSION_MAJOR}::Core)
 
 if(COMMAND qt_create_translation)
     qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
@@ -27,7 +27,7 @@ else()
 endif()
 
 include(GNUInstallDirs)
-install(TARGETS tarjeta-presentacion-cpp
+install(TARGETS clase2
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
